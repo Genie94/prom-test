@@ -15,6 +15,9 @@ export class UpdateAnswerUseCase
 
   async execute(command: UpdateAnswerCommand): Promise<boolean> {
     const findedAnswer = await this.repo.findOne(command.identifier);
+    if (!findedAnswer) {
+      return false;
+    }
     const findedAnswerProperty = findedAnswer.getProperty();
     const updatedAnswer = this.repo.create({
       identifier: command.identifier,

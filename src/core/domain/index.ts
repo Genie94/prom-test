@@ -14,7 +14,7 @@ export abstract class Domain<P> {
     return this.identifier.equal(domain.getIdentifier());
   }
   getIdentifier() {
-    return deepCopy(this.identifier);
+    return this.identifier;
   }
   getProperty() {
     return deepCopy(this.property);

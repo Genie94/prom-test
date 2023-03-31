@@ -6,7 +6,7 @@ export interface CreateAnswerCommand {
   property: AnswerDomainProperty;
 }
 
-export class CreateRoleUseCase
+export class CreateAnswerUseCase
   implements UseCase<CreateAnswerCommand, Promise<boolean>>
 {
   constructor(
